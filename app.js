@@ -38,9 +38,6 @@ const PROOF = [
   ['p3', 1734316, 'Long video'],
   ['p6', 1257536, 'Short'],
   ['p15', 284852, 'Long video'],
-  ['p10', 280000, 'Short', '2.8 lakh'],
-  ['p7', 189972, 'Long video'],
-  ['p8', 180216, 'Long video'],
 ];
 // daily views shape read off the October 2026 screenshot (thousands)
 const DAILY = [5, 6, 5, 9, 7, 6, 7, 5, 6, 7, 8, 7, 7, 8, 9, 8, 10, 22, 16, 36, 20, 13, 15, 16, 34, 58, 56, 70];
