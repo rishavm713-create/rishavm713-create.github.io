@@ -348,3 +348,22 @@ dialog.pic .frame img{width:100%;height:auto}
   .pipe li{padding:48px 0 0}
   .pipe li::before{top:0}
 }
+
+/* v5: experience timeline */
+.xp{list-style:none;padding:0;margin-top:var(--s3);position:relative}
+.xp::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.xp::after{content:"";position:absolute;left:5px;top:8px;width:2px;height:0;background:linear-gradient(var(--accent-soft),var(--clip));transition:height 2s var(--ease)}
+.xp.in::after{height:calc(100% - 16px)}
+.xp > li{position:relative;padding:0 0 var(--s3) 32px}
+.xp > li::before{content:"";position:absolute;left:0;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--line2);z-index:1}
+.xp > .xp-main{margin:0 0 var(--s3) 32px;padding:20px;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r3)}
+.xp > .xp-main::before{left:-33px;top:26px;background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 4px rgba(124,58,237,.25)}
+.when{font:500 12px var(--mono);color:var(--fg3);margin-bottom:4px}
+.xp h3{font-size:20px;margin-bottom:6px}
+.xp h3 span{display:block;font:500 15px var(--font);color:var(--accent-soft);letter-spacing:0;margin-top:2px}
+.xp p{color:var(--fg2)}
+.xp .ticks{margin-top:10px}
+.xp .ticks li{font-size:15px;margin:6px 0}
+.edu{color:var(--fg2);font-size:15px;margin-top:var(--s2)}
+.edu span{font:500 12px var(--mono);color:var(--fg3);margin-right:8px}
+@media (min-width:900px){.xp-main .ticks{columns:2;column-gap:32px}.xp-main .ticks li{break-inside:avoid}}

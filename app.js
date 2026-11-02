@@ -137,7 +137,7 @@ dlg.addEventListener('cancel', () => { frame.innerHTML = ''; });
 document.querySelectorAll('.pipe li').forEach((li, k) => li.style.setProperty('--k', k));
 
 // reveal + counters + chart on scroll
-document.querySelectorAll('.section > h2, .pipe, .case, .cs, .caps, .cards, .plans, .group').forEach((el) => el.classList.add('rv'));
+document.querySelectorAll('.section > h2, .pipe, .xp, .case, .cs, .caps, .cards, .plans, .group').forEach((el) => el.classList.add('rv'));
 const io = new IntersectionObserver((es) => es.forEach((en) => {
   if (!en.isIntersecting) return;
   const t = en.target;
