@@ -369,3 +369,5 @@ dialog.pic .frame img{width:100%;height:auto}
 @media (min-width:900px){.xp-main .ticks{columns:2;column-gap:32px}.xp-main .ticks li{break-inside:avoid}}
 
 @media (min-width:640px){#services .cards.c2{grid-template-columns:1fr 1fr}}
+
+.names{text-align:center;color:var(--fg2);font-size:15px;max-width:44em;margin:-6px auto var(--s2)}
