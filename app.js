@@ -271,7 +271,7 @@ document.querySelectorAll('.rv, [data-count], #chart').forEach((el) => io.observ
   if ((net && net.saveData) || (navigator.deviceMemory && navigator.deviceMemory < 4)) return;
   const probe = document.createElement('canvas');
   if (!(probe.getContext('webgl2') || probe.getContext('webgl'))) return;
-  const go = () => import('./hero3d.js?v=20261104b').then((m) => m.default(ed)).catch(() => {});
+  const go = () => import('./hero3d.js?v=20261104d').then((m) => m.default(ed)).catch(() => {});
   const later = () => ('requestIdleCallback' in window ? requestIdleCallback(go, { timeout: 1500 }) : setTimeout(go, 300));
   if (document.readyState === 'complete') later(); else addEventListener('load', later, { once: true });
 })();

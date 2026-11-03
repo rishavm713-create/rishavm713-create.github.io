@@ -25,8 +25,9 @@ export default function start(editor) {
   const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 50);
   camera.position.set(0, 0, 10);
 
-  scene.add(new THREE.AmbientLight(0xffffff, 1.6));
-  const sun = new THREE.DirectionalLight(0xffffff, 1.4);
+  // lit like his studio backdrop: violet fill from above, warm key from the front
+  scene.add(new THREE.HemisphereLight(new THREE.Color(css('--accent-soft')), new THREE.Color(css('--bg')), 1.5));
+  const sun = new THREE.DirectionalLight(new THREE.Color(css('--fg')), 1.5);
   sun.position.set(3, 5, 6);
   scene.add(sun);
 
@@ -116,12 +117,12 @@ export default function start(editor) {
 
   // one damped pointer target; scroll adds a tilt as the hero leaves
   const target = { x: 0, y: 0 }, cur = { x: 0, y: 0 };
-  addEventListener('pointermove', (e) => {
+  if (!phone && matchMedia('(hover: hover)').matches) addEventListener('pointermove', (e) => {
     target.x = (e.clientX / innerWidth) * 2 - 1;
     target.y = (e.clientY / innerHeight) * 2 - 1;
   }, { passive: true });
 
-  let last = performance.now(), t = 0, raf = 0, shown = false, visible = true;
+  let last = performance.now(), t = 0, raf = 0, shown = false, visible = true, dead = false;
   function draw(now = performance.now()) {
     const dt = Math.min(1 / 30, (now - last) / 1000);
     last = now;
@@ -146,10 +147,10 @@ export default function start(editor) {
   }
   const loop = (now) => {
     draw(now);
-    raf = visible && !document.hidden ? requestAnimationFrame(loop) : 0;
+    raf = !dead && visible && !document.hidden ? requestAnimationFrame(loop) : 0;
   };
   const wake = () => {
-    if (!raf && visible && !document.hidden) {
+    if (!raf && !dead && visible && !document.hidden) {
       last = performance.now();
       raf = requestAnimationFrame(loop);
     }
@@ -160,8 +161,13 @@ export default function start(editor) {
     e.preventDefault();
     cancelAnimationFrame(raf);
     raf = 0;
-    visible = false;
+    dead = true;
     editor.classList.remove('is3d');
+  });
+  canvas.addEventListener('webglcontextrestored', () => {
+    dead = false;
+    shown = false;
+    wake();
   });
   resize();
   wake();
