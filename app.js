@@ -220,3 +220,21 @@ document.querySelectorAll('.rv, [data-count], #chart').forEach((el) => io.observ
   addEventListener('load', layout);
   layout();
 })();
+
+// experience timeline: fill the line to the reading point and light each passed dot
+(function xpLine() {
+  const xp = document.querySelector('.xp');
+  if (!xp) return;
+  const items = [...xp.querySelectorAll(':scope > li')];
+  const update = () => {
+    const r = xp.getBoundingClientRect();
+    const mark = innerHeight * 0.6;
+    const f = Math.max(0, Math.min(1, (mark - r.top) / Math.max(1, r.height)));
+    xp.style.setProperty('--xp', f.toFixed(4));
+    items.forEach((li) => li.classList.toggle('on', li.getBoundingClientRect().top + 14 <= mark));
+  };
+  let q = false;
+  addEventListener('scroll', () => { if (!q) { q = true; requestAnimationFrame(() => { q = false; update(); }); } }, { passive: true });
+  addEventListener('resize', update);
+  update();
+})();

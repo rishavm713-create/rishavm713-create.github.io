@@ -444,3 +444,9 @@ dialog[open]{margin:auto}
 /* stat numbers stay on one line; smaller on desktop where four sit side by side */
 .nums b{white-space:nowrap}
 @media (min-width:900px){.nums b{font-size:clamp(20px,1.9vw,30px)}}
+
+/* experience timeline: the line fills as you scroll and each dot lights up when you reach that job */
+.xp::after{height:calc((100% - 16px) * var(--xp,0));transition:none}
+.xp.in::after{height:calc((100% - 16px) * var(--xp,0))}
+.xp > li::before{transition:background-color .25s ease,border-color .25s ease,box-shadow .25s ease}
+.xp > li.on::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 4px rgba(124,58,237,.25),0 0 14px rgba(124,58,237,.6)}
