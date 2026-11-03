@@ -1,4 +1,4 @@
-/* Hallmark · redesign: restyle · theme: brand, set by the owner (violet from his photo backdrop, warm off-white, amber timeline details; flat, no glows or gradients) · type: Archivo condensed, IBM Plex Sans, IBM Plex Mono · genre: editorial · signature: the hero edit timeline */
+/* Hallmark · redesign: restyle · theme: brand, set by the owner (violet from his photo backdrop, warm off-white, amber timeline details; flat, no glows or gradients) · type: Archivo condensed, IBM Plex Sans, IBM Plex Mono · genre: editorial · signature: the hero edit timeline (CSS, no 3D) */
 /* critique: the layout and editor props stay; the old purple, the old fonts, the chips, sales card, skills grid and Skillverse steps are gone; one photo-derived violet does the signalling */
 /* waive 62: .rv is only added by app.js, so every section is visible with scripting off */
 /* waive 19: en dashes stay inside number and date ranges (11–20, Nov 2023 – Nov 2026), the CV's own format */
@@ -240,7 +240,7 @@ dialog.v .frame{aspect-ratio:9/16;max-height:82vh;margin:0 auto}
 .chart{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r3);padding:18px;box-shadow:var(--shadow)}
 .chart figcaption{display:flex;justify-content:space-between;align-items:center;color:var(--fg2);font-size:14px;margin-bottom:12px}
 .up{color:var(--fg);font:600 15px var(--mono)}
-.chart svg{width:100%;height:auto;aspect-ratio:600/260;overflow:visible;display:block}
+.chart svg{width:100%;height:auto;aspect-ratio:600/260;overflow:visible;display:block;margin-top:24px}
 .grid line{stroke:var(--line);stroke-dasharray:3 5}
 .line{fill:none;stroke:var(--accent-soft);stroke-width:3;stroke-linecap:round;stroke-dasharray:var(--len);stroke-dashoffset:var(--len)}
 .area{fill:url(#fill);opacity:0}
@@ -458,14 +458,6 @@ dialog[open]{margin:auto}
 .pipe li.now b{color:var(--accent-soft)}
 @media (prefers-reduced-motion:reduce){.pipe .ph{display:none}}
 
-/* hero 3D: the canvas fades in over the CSS editor, which keeps the layout and stays as the fallback */
-.editor{position:relative}
-.editor .gl{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;opacity:0;transition:opacity .6s var(--ease-out)}
-.editor>.monitor,.editor>.timeline{transition:opacity .4s var(--ease-out)}
-.editor.is3d{background:transparent;border-color:transparent;box-shadow:none}
-.editor.is3d .gl{opacity:1}
-.editor.is3d>.monitor,.editor.is3d>.timeline{opacity:0}
-@media (min-width:1200px){.editor .gl{inset:-48px;width:calc(100% + 96px);height:calc(100% + 96px)}}
 
 /* hero proof link sits on its own line */
 .hero-text>.link{display:block;margin-top:var(--s1);padding:0;min-height:44px}
