@@ -559,3 +559,5 @@ p,li{text-wrap:pretty}
 .case-body .nums+p{margin-bottom:var(--s4)}
 @media (min-width:900px){#services .cards.c2{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .parts.how{margin-top:var(--s3)}
+.audit{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;background:var(--bg3);border:1px solid color-mix(in srgb,var(--accent) 50%,var(--line));border-radius:var(--r3);padding:24px;margin:0 0 var(--s3)}
+.audit h3{font-size:24px;margin-bottom:4px}.audit p{color:var(--fg2);max-width:40em}
