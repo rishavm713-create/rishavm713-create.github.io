@@ -525,3 +525,11 @@ dialog[open]{margin:auto}
 .parts p{color:var(--fg2)}
 .plan .fit{margin:6px 0 0}
 @media (min-width:900px){.parts{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* skills as three proof cards */
+.caps{display:grid;gap:12px;background:none;border-radius:0;overflow:visible}
+.caps div{display:block;background:var(--bg2);border:1px solid var(--line);border-radius:var(--r3);padding:24px}
+.cap-n{display:block;font:800 clamp(34px,4vw,46px)/1 var(--head);letter-spacing:-.03em;color:var(--accent-soft);white-space:nowrap;margin-bottom:14px}
+.cap-n small{font:600 16px var(--font);color:var(--fg2);letter-spacing:0}
+.caps h3{font-size:22px;margin-bottom:6px}
+@media (min-width:900px){.caps{grid-template-columns:repeat(3,minmax(0,1fr))}.caps div{grid-template-columns:none}}
