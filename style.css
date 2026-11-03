@@ -490,5 +490,5 @@ dialog[open]{margin:auto}
 .contact-rows{display:grid;gap:var(--s3);margin-top:var(--s3)}
 .contact-rows .cta{margin-top:var(--s1)}
 
-/* five cases: turnaround | shorts, then sales full width, then EditSutra */
-@media (min-width:900px){.cs-sales{grid-column:1/-1}}
+/* cases on desktop: turnaround beside shorts and sales stacked, then EditSutra full width */
+@media (min-width:900px){.cases{align-items:stretch}.cs-turn{grid-row:span 2}}
