@@ -557,3 +557,4 @@ dialog[open]{margin:auto}
 /* no single word left alone on the last line; a little air above the story */
 p,li{text-wrap:pretty}
 .case-body .nums+p{margin-bottom:var(--s4)}
+@media (min-width:900px){#services .cards.c2{grid-template-columns:repeat(3,minmax(0,1fr))}}
