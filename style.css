@@ -554,3 +554,6 @@ dialog[open]{margin:auto}
 .faq p{color:var(--fg2);margin-top:8px}
 @media (max-width:639px){.hero .cta a:nth-child(3){display:none}}
 .plan .pill{align-self:flex-start}
+/* no single word left alone on the last line; a little air above the story */
+p,li{text-wrap:pretty}
+.case-body .nums+p{margin-top:var(--s3)}
