@@ -556,4 +556,4 @@ dialog[open]{margin:auto}
 .plan .pill{align-self:flex-start}
 /* no single word left alone on the last line; a little air above the story */
 p,li{text-wrap:pretty}
-.case-body .nums+p{margin-top:var(--s3)}
+.case-body .nums+p{margin-bottom:var(--s4)}
