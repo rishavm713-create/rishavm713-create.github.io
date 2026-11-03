@@ -29,17 +29,27 @@ const GROUPS = {
 };
 // [screenshot, views, what]
 const PROOF = [
+  ['m-crispr', 23000000, 'Short · SciAstra', '2.3 crore'],
   ['p1', 6562480, 'Long video'],
   ['sciastra-bengaluru-90d', 5460829, 'Channel views in 90 days', '54.6 lakh'],
   ['p4', 5314630, 'Short'],
   ['p12', 3540000, 'Channel views in October', '35.4 lakh'],
+  ['m-neet-pcb', 3300000, 'Short · SciAstra', '33 lakh'],
   ['p2', 3111993, 'Long video'],
+  ['m-earth', 2600000, 'Short · SciAstra', '26 lakh'],
   ['p5', 2374366, 'Short'],
+  ['m-ants', 2300000, 'Short · SciAstra', '23 lakh'],
   ['p14', 2195298, 'Long video'],
   ['p3', 1734316, 'Long video'],
   ['p6', 1257536, 'Short'],
+  ['m-iisc-life', 1200000, 'Short · SciAstra', '12 lakh'],
+  ['m-iisc-hostel', 1200000, 'Short · SciAstra', '12 lakh'],
+  ['m-water', 1000000, 'Short · SciAstra', '10 lakh'],
   ['p16', 360000, 'Short, first week', '3.6 lakh'],
   ['p15', 284852, 'Long video'],
+  ['m-biology', 226000, 'Long video · SciAstra', '2.26 lakh'],
+  ['m-niser', 223000, 'Long video · SciAstra', '2.23 lakh'],
+  ['m-neet-alt', 182000, 'Long video · SciAstra', '1.82 lakh'],
 ];
 // daily views shape read off the 6 Oct – 2 Nov 2026 screenshot (thousands)
 const DAILY = [3, 9, 7, 5, 6, 4, 5, 6, 7, 7, 7, 7, 8, 7, 10, 23, 18, 36, 16, 7, 11, 12, 33, 60, 57, 70, 93, 63];
@@ -129,7 +139,7 @@ document.addEventListener('click', (e) => {
   const v = e.target.closest('.vid');
   if (v) return open(`<iframe src="https://www.youtube-nocookie.com/embed/${v.dataset.id}?autoplay=1&rel=0&playsinline=1" title="YouTube video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`, v.dataset.v ? 'v' : '');
   const p = e.target.closest('[data-proof]');
-  if (p) return open(`<img src="img/proof/${p.dataset.proof}.webp" alt="YouTube Studio screenshot">`, 'pic');
+  if (p) return open(`<img src="img/proof/${p.dataset.proof}.webp" alt="YouTube Studio screenshot" onerror="this.outerHTML='<p class=pending>Screenshot coming soon.</p>'">`, 'pic');
 });
 const closeDlg = () => { frame.innerHTML = ''; dlg.close(); };
 dlg.querySelector('.close').addEventListener('click', closeDlg);
