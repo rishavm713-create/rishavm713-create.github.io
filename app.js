@@ -147,3 +147,65 @@ const io = new IntersectionObserver((es) => es.forEach((en) => {
   io.unobserve(t);
 }), { rootMargin: '0px 0px -10% 0px' });
 document.querySelectorAll('.rv, [data-count], #chart').forEach((el) => io.observe(el));
+
+// EditSutra feature tabs (arrow keys move between tabs)
+(function tabs() {
+  const list = document.querySelector('.es-tabs');
+  if (!list) return;
+  const btns = [...list.querySelectorAll('[role="tab"]')];
+  const show = (b) => {
+    btns.forEach((x) => {
+      const on = x === b;
+      x.setAttribute('aria-selected', on);
+      x.tabIndex = on ? 0 : -1;
+      document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
+    });
+  };
+  list.addEventListener('click', (e) => { const b = e.target.closest('[role="tab"]'); if (b) show(b); });
+  list.addEventListener('keydown', (e) => {
+    const i = btns.indexOf(document.activeElement);
+    if (i < 0 || !['ArrowRight', 'ArrowLeft'].includes(e.key)) return;
+    const n = btns[(i + (e.key === 'ArrowRight' ? 1 : btns.length - 1)) % btns.length];
+    show(n); n.focus(); e.preventDefault();
+  });
+})();
+
+// edit timeline under the nav: playhead follows scroll, ticks mark each section
+(function seq() {
+  const bar = document.getElementById('seq');
+  if (!bar) return;
+  const secs = [...document.querySelectorAll('main section')].filter((s) => s.querySelector(':scope > .tc'));
+  const label = document.createElement('span');
+  label.className = 'seq-tc';
+  bar.appendChild(label);
+  let marks = [];
+  const layout = () => {
+    marks.forEach((m) => m.remove());
+    const max = document.documentElement.scrollHeight - innerHeight;
+    marks = secs.map((s) => {
+      const m = document.createElement('i');
+      m.className = 'mk';
+      m.style.left = `${Math.min(99.8, (100 * s.offsetTop) / Math.max(1, max))}%`;
+      bar.appendChild(m);
+      return m;
+    });
+    update();
+  };
+  const update = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    const p = max > 0 ? Math.min(1, scrollY / max) : 0;
+    const w = bar.clientWidth;
+    bar.style.setProperty('--p', p);
+    bar.style.setProperty('--x', `${p * (w - 2)}px`);
+    let cur = secs[0];
+    for (const s of secs) if (s.offsetTop - innerHeight / 3 <= scrollY) cur = s;
+    const t = cur ? cur.querySelector(':scope > .tc').textContent.trim() : '';
+    if (label.textContent !== t) label.textContent = t;
+    bar.style.setProperty('--lx', `${Math.max(0, Math.min(w - label.offsetWidth, p * w - label.offsetWidth / 2))}px`);
+  };
+  let q = false;
+  addEventListener('scroll', () => { if (!q) { q = true; requestAnimationFrame(() => { q = false; update(); }); } }, { passive: true });
+  addEventListener('resize', layout);
+  addEventListener('load', layout);
+  layout();
+})();

@@ -401,11 +401,7 @@ dialog.pic .frame img{width:100%;height:auto}
 
 /* press feedback everywhere, hover lift only with a mouse */
 .btn:active,.link:active{transform:scale(.97)}
-@media (hover:hover) and (pointer:fine){
-  .metric,.cs,.card,.caps>div,.plan{transition:transform .2s var(--ease-out),border-color .2s ease,opacity .5s var(--ease-out)}
-  .metric:hover,.cs:hover,.card:hover,.caps>div:hover,.plan:hover{transform:translateY(-3px);border-color:var(--line2)}
-  .rv.in>:hover{transition-delay:0s}
-}
+
 :focus-visible{outline:2px solid var(--accent-soft);outline-offset:3px;border-radius:6px}
 
 /* phone: put the message and buttons first, the editor visual after */
@@ -417,3 +413,23 @@ dialog.pic .frame img{width:100%;height:auto}
   .hero-text>*,.editor{animation:none}
   .caps.rv>*,.cards.rv>*,.cases.rv>*,.plans.rv>*{opacity:1;transform:none;transition:none}
 }
+
+/* ---- edit timeline: the page plays like a sequence as you scroll ---- */
+.seq{position:absolute;left:0;right:0;bottom:-2px;height:3px;pointer-events:none}
+.seq-fill{position:absolute;inset:0;transform-origin:0 50%;transform:scaleX(var(--p,0));background:linear-gradient(90deg,var(--clip),var(--clip2))}
+.seq-head{position:absolute;left:0;top:-4px;width:2px;height:11px;background:var(--rec);box-shadow:0 0 8px var(--rec);transform:translateX(var(--x,0px))}
+.seq .mk{position:absolute;top:-1px;width:1px;height:5px;background:var(--fg3);opacity:.6}
+.seq-tc{position:absolute;top:8px;left:0;font:500 11px/1 var(--mono);color:var(--fg2);background:rgba(10,10,12,.85);
+  border:1px solid var(--line);border-radius:6px;padding:4px 6px;white-space:nowrap;transform:translateX(var(--lx,0px));display:none}
+@media (min-width:900px){.seq-tc{display:block}}
+
+/* ---- EditSutra feature tabs ---- */
+.es-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 12px}
+.es-tabs button{font:500 12.5px/1 var(--mono);color:var(--fg2);padding:8px 10px;border:1px solid var(--line2);border-radius:999px;
+  background:transparent;cursor:pointer;transition:background-color .15s ease,color .15s ease,border-color .15s ease}
+.es-tabs button:hover{color:var(--fg)}
+.es-tabs button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.es-panel[hidden]{display:none}
+.es-panel{min-height:7.5em;animation:panel .22s var(--ease-out)}
+@keyframes panel{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.es-panel{animation:none}}
