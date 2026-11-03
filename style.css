@@ -490,3 +490,5 @@ dialog[open]{margin:auto}
 /* contact: hiring and projects on their own lines */
 .contact-rows{display:grid;gap:var(--s3);margin-top:var(--s3)}
 .contact-rows .cta{margin-top:var(--s1)}
+.who strong{color:var(--fg);font-weight:600}
+.hero-text>:nth-child(7){animation-delay:.42s}
