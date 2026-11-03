@@ -457,3 +457,12 @@ dialog[open]{margin:auto}
 .pipe li b{transition:color .3s}
 .pipe li.now b{color:var(--rec)}
 @media (prefers-reduced-motion:reduce){.pipe .ph{display:none}}
+
+/* hero 3D: the canvas fades in over the CSS editor, which keeps the layout and stays as the fallback */
+.editor{position:relative}
+.editor .gl{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;opacity:0;transition:opacity .6s var(--ease-out)}
+.editor>.monitor,.editor>.timeline{transition:opacity .4s var(--ease-out)}
+.editor.is3d{background:transparent;border-color:transparent;box-shadow:none}
+.editor.is3d .gl{opacity:1}
+.editor.is3d>.monitor,.editor.is3d>.timeline{opacity:0}
+@media (min-width:900px){.editor .gl{inset:-56px;width:calc(100% + 112px);height:calc(100% + 112px)}}

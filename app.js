@@ -208,9 +208,9 @@ document.querySelectorAll('.rv, [data-count], #chart').forEach((el) => io.observ
     const w = bar.clientWidth;
     bar.style.setProperty('--p', p);
     bar.style.setProperty('--x', `${p * (w - 2)}px`);
-    let cur = secs[0];
+    let cur = null;
     for (const s of secs) if (s.offsetTop - innerHeight / 3 <= scrollY) cur = s;
-    const t = cur ? cur.querySelector(':scope > .tc').textContent.trim() : '';
+    const t = cur ? cur.querySelector(':scope > .tc').textContent.trim() : '00:00 · Portfolio';
     if (label.textContent !== t) label.textContent = t;
     bar.style.setProperty('--lx', `${Math.max(0, Math.min(w - label.offsetWidth, p * w - label.offsetWidth / 2))}px`);
   };
@@ -261,4 +261,17 @@ document.querySelectorAll('.rv, [data-count], #chart').forEach((el) => io.observ
     if (e.isIntersecting && !timer) { go(); timer = setInterval(go, 1100); }
     else if (!e.isIntersecting && timer) { clearInterval(timer); timer = null; }
   }).observe(pipe);
+})();
+
+// hero 3D: load three.js after the page, only where it can run smoothly; the CSS editor is the still fallback
+(function hero3d() {
+  const ed = document.querySelector('.editor');
+  if (!ed || reduce) return;
+  const net = navigator.connection;
+  if ((net && net.saveData) || (navigator.deviceMemory && navigator.deviceMemory < 4)) return;
+  const probe = document.createElement('canvas');
+  if (!(probe.getContext('webgl2') || probe.getContext('webgl'))) return;
+  const go = () => import('./hero3d.js?v=20261104b').then((m) => m.default(ed)).catch(() => {});
+  const later = () => ('requestIdleCallback' in window ? requestIdleCallback(go, { timeout: 1500 }) : setTimeout(go, 300));
+  if (document.readyState === 'complete') later(); else addEventListener('load', later, { once: true });
 })();
