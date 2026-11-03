@@ -98,7 +98,7 @@ $('#metrics').innerHTML = PROOF.map(([f, v, w, label], i) =>
 
 // chart path
 (function drawChart() {
-  const W = 600, H = 260, max = 75;
+  const W = 600, H = 260, max = Math.max(...DAILY) * 1.08;
   const pts = DAILY.map((v, i) => [i * W / (DAILY.length - 1), H - (v / max) * (H - 20)]);
   let d = `M${pts[0][0]},${pts[0][1]}`;
   for (let i = 1; i < pts.length; i++) {

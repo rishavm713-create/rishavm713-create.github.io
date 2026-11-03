@@ -461,7 +461,7 @@ dialog[open]{margin:auto}
 @media (prefers-reduced-motion:reduce){.pipe .ph{display:none}}
 
 /* ---- 4 Nov 2026: old look, new copy. Styles for the new blocks ---- */
-.chart svg{margin-top:24px}
+.chart svg{margin-top:8px}
 .chart .s0{stop-color:#7c3aed;stop-opacity:.45}.chart .s1{stop-color:#7c3aed;stop-opacity:0}
 .stats b,.nums b{white-space:nowrap}
 .who{color:var(--fg3);font-size:15px;margin-top:var(--s2);max-width:34em}
