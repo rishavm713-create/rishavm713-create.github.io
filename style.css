@@ -502,3 +502,10 @@ dialog[open]{margin:auto}
 .plan .ticks{margin:10px 0}
 .plan .fit{color:var(--fg2);font-size:15px;margin-top:8px}
 .price{font-size:34px}
+
+/* skills: bigger so it reads */
+.caps div{padding:24px 20px}
+.caps h3{font-size:clamp(22px,2.4vw,26px)}
+.caps p{font-size:18px;color:var(--fg2)}
+.tools{font-size:17px}
+@media (min-width:900px){.caps div{grid-template-columns:280px 1fr}}
