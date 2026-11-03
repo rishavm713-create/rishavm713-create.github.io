@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261104s">
+<link rel="stylesheet" href="style.css?v=20261104u">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Rishav Mishra","jobTitle":"Content & Growth Leader","image":"https://rishavm713-create.github.io/img/rishav.webp","url":"https://rishavm713-create.github.io/","sameAs":["https://www.linkedin.com/in/rishav-mishra-b325a7168/"],"worksFor":{"@type":"Organization","name":"SciAstra"},"knowsAbout":["Content strategy","YouTube growth","Team leadership","Digital marketing","Video editing","Motion graphics","AI video","AI product development"]}
 </script>
@@ -52,6 +52,7 @@
     <div class="cta">
       <a class="btn" href="mailto:rishavskillverse@gmail.com?subject=Job%20opportunity">Email me</a>
       <a class="btn btn-ghost" href="Rishav-Mishra-CV.pdf" download>Download CV</a>
+      <a class="btn btn-ghost" href="#case">Explore case studies</a>
     </div>
   </div>
 
@@ -72,7 +73,7 @@
 </section>
 
 <section class="stats" aria-label="Key numbers">
-  <div><b data-count="100" data-suffix="M+">100M+</b><span>organic views</span></div>
+  <div><b data-count="100" data-suffix="M+">100M+</b><span>organic views, all channels I worked on</span></div>
   <div><b data-count="8">8</b><span>Shorts at 1M+ views, top one 23M</span></div>
   <div><b>11–20</b><span>people in the creative teams I led</span></div>
   <div><b data-count="500" data-suffix="+">500+</b><span>videos produced at SciAstra</span></div>
@@ -165,7 +166,9 @@
     <article class="cs cs-main">
       <span class="kind">Case 05: product building</span>
       <h3>EditSutra</h3>
-      <p>A Skillverse product: an AI plugin for Adobe Premiere Pro that does about 80% of the boring, repeated editing work. I saw where my own editing got slow, and built it myself with Claude Code.</p>
+      <p class="pdr"><b>Problem</b>Editors lose hours on repeated tasks and jump between 6–8 websites to finish one video.</p>
+      <p class="pdr"><b>What I did</b>I found these slow spots in my own editing work and built EditSutra, an AI plugin for Adobe Premiere Pro, myself with Claude Code. A Skillverse product.</p>
+      <!-- [PLACEHOLDER: EditSutra screenshots or a demo video] -->
       <p class="ops-l">In beta with early users. Mac and Windows, 100+ tools.</p>
       <div class="es-tabs" role="tablist" aria-label="EditSutra features"><button role="tab" id="es-t0" aria-controls="es-p0" aria-selected="true" tabindex="0">Editing automation</button><button role="tab" id="es-t1" aria-controls="es-p1" aria-selected="false" tabindex="-1">Shorts and repurposing</button><button role="tab" id="es-t2" aria-controls="es-p2" aria-selected="false" tabindex="-1">Captions and motion</button><button role="tab" id="es-t3" aria-controls="es-p3" aria-selected="false" tabindex="-1">Audio and voice</button><button role="tab" id="es-t4" aria-controls="es-p4" aria-selected="false" tabindex="-1">Visual production</button><button role="tab" id="es-t5" aria-controls="es-p5" aria-selected="false" tabindex="-1">Asset library</button></div>
       <ul role="tabpanel" id="es-p0" aria-labelledby="es-t0" class="ticks small es-panel"><li>AI-assisted rough cuts</li><li>Automatic removal of silences, filler words and bad retakes</li><li>Repeated editing steps done for you</li><li>One-click editing recipes</li></ul><ul role="tabpanel" id="es-p1" aria-labelledby="es-t1" class="ticks small es-panel" hidden><li>AI finds the best Shorts and scores each hook</li><li>Automatic 9:16 vertical reframing</li><li>Turn long videos into Shorts and Reels</li></ul><ul role="tabpanel" id="es-p2" aria-labelledby="es-t2" class="ticks small es-panel" hidden><li>English, Hindi and Hinglish captions</li><li>Animated captions and text animations</li><li>Built-in motion graphics and map animations</li><li>Ready-to-use creative templates</li></ul><ul role="tabpanel" id="es-p3" aria-labelledby="es-t3" class="ticks small es-panel" hidden><li>Voice cleanup</li><li>Sound design</li><li>Music ducking</li><li>AI audio cleanup</li></ul><ul role="tabpanel" id="es-p4" aria-labelledby="es-t4" class="ticks small es-panel" hidden><li>B-roll matching</li><li>Auto zoom and transitions</li><li>Automatic colour correction and grading tools</li><li>Map animations</li></ul><ul role="tabpanel" id="es-p5" aria-labelledby="es-t5" class="ticks small es-panel" hidden><li>142 templates</li><li>97 built-in sounds</li><li>Ready-made editing files and steps</li></ul>
@@ -183,8 +186,9 @@
 <section class="section">
   <p class="tc">01:30 · Results</p>
   <h2>Videos I've worked on, by the numbers</h2>
-  <p class="sub">Each number links to its YouTube Studio screenshot.</p>
+  <div class="res-sum"><b id="res-total"></b><span id="res-note"></span></div>
   <div class="metrics" id="metrics"></div>
+  <button class="btn btn-ghost res-more" id="res-more" aria-expanded="false" aria-controls="metrics">See the breakdown</button>
 </section>
 
 <section class="section pipe-s">
@@ -221,11 +225,12 @@
 
 <section class="section">
   <p class="tc">04:00 · Skills</p>
-  <h2>What I bring to a team</h2>
+  <h2>Why brands and teams hire me</h2>
   <div class="caps">
-    <div><b class="cap-n">541K <small>of 572K</small></b><h3>Channel growth</h3><p>Views my Shorts brought a channel in September 2025. I handle topics, hooks, titles, thumbnails and retention.</p></div>
-    <div><b class="cap-n">11–20</b><h3>Team leadership</h3><p>People in the creative teams I lead. I assign the work, train people, set schedules and check every video before it goes out.</p></div>
-    <div><b class="cap-n">2024</b><h3>AI video</h3><p>I brought HeyGen AI-avatar videos to SciAstra. I use ElevenLabs voice, and I built EditSutra with Claude Code.</p></div>
+    <div><b class="cap-n">100M+</b><h3>Results you can check</h3><p>Organic views across the channels I worked on. Every big number on this page links to its YouTube Studio screenshot.</p></div>
+    <div><b class="cap-n">541K <small>of 572K</small></b><h3>Growth that comes from content</h3><p>Views my Shorts brought a channel in September 2025. Topics, hooks, titles, thumbnails and retention, planned for growth.</p></div>
+    <div><b class="cap-n">11–20</b><h3>A team that ships on time</h3><p>I lead editors and designers: I plan production, split the work, set deadlines, train people and check every video before it goes out.</p></div>
+    <div><b class="cap-n">500+</b><h3>Scale with AI</h3><p>Videos produced at SciAstra. I brought in HeyGen AI-avatar videos in 2024, use ElevenLabs voice, and built EditSutra to speed up editing.</p></div>
   </div>
   <p class="tools"><span>Tools</span> Premiere Pro, After Effects, Photoshop, YouTube Studio, HeyGen, ElevenLabs, Midjourney, Higgsfield, ChatGPT and Claude Code</p>
 </section>
@@ -255,7 +260,7 @@
     <li>
       <p class="when">8 months</p>
       <h3>AppSquadz, Noida <span>Video Editor, Graphic Designer &amp; Social Media Manager</span></h3>
-      <p>Edited Avadh Ojha videos with 6.8M, 3.1M and 1.7M views, including thumbnails and YouTube SEO. For Anushka Chaudhary, ran PR and fan-page promotion to build hype before her channel launch; it reached 100K subscribers in three months.</p>
+      <p>Edited Avadh Ojha videos with 6.8M, 3.1M and 1.7M views, including thumbnails and YouTube SEO. For Anushka Chaudhary, worked on a month-long PR and fan-page clipping campaign before her channel launch. The channel reached 100K subscribers in three months.</p>
       <button class="link" data-proof="avadh-ojha">See the Avadh Ojha videos</button>
     </li>
     <li>
@@ -264,7 +269,7 @@
       <p>Led social media campaigns, content planning and strategy for clients.</p>
     </li>
     <li>
-      <p class="when">Freelance, alongside full-time work, until Sep 2026</p>
+      <p class="when">Freelance projects, at the same time as my full-time jobs, until Sep 2026</p>
       <h3>Freelance <span>Content Producer, Growth &amp; Creative Strategy · 11–20 Clients</span></h3>
       <ul class="ticks small">
         <li><b>Healing Hands by Shivangi</b> (Content Producer, Instagram): produced Reels with 100K+ views each; added 28K followers</li>
@@ -281,7 +286,7 @@
   <p class="tc">05:00 · Products</p>
   <h2>What I'm building and making</h2>
   <div class="cards">
-    <article class="card card-main"><span class="pill">Beta</span><h3>EditSutra</h3><p>An AI Premiere Pro extension that automates about 80% of repetitive editing work.</p></article>
+    <article class="card card-main"><span class="pill">Beta</span><h3>EditSutra</h3><p>An AI Premiere Pro plugin that does the repeated editing work for you.</p></article>
     <article class="card"><span class="pill pill-dim">In progress</span><h3>WebSutra</h3><p>A Skillverse product: a Claude Code skill that builds websites that look unique, not AI-made.</p></article>
     <article class="card"><span class="pill pill-dim">In progress</span><h3>AutomationSutra</h3><p>Automation for LinkedIn, Instagram and YouTube.</p></article>
     <article class="card"><span class="pill pill-dim">In progress</span><h3>DesignSutra</h3><p>Thumbnail and title tools for YouTube creators.</p></article>
@@ -295,8 +300,8 @@
 <section id="services" class="section">
   <p class="tc">06:00 · Skillverse</p>
   <h2>Hire Skillverse, my team</h2>
-  <p class="sub">From the idea to the upload, we run your channel end to end. For Indian creators, EdTech companies and brands growing on YouTube and Instagram.</p>
-  <p class="sv-proof">I run the process myself. It is the same one behind SciAstra Bengaluru's <b>54.6 lakh views in 90 days</b>, up 85%.</p>
+  <p class="sub">We don't just edit videos. We run your channel end to end, from the idea to the upload, so you do not have to manage it. For Indian creators, EdTech companies and brands growing on YouTube and Instagram.</p>
+  <p class="sv-proof">The same process took SciAstra Bengaluru to <b>54.6 lakh views in 90 days</b>, up 85%, and made a Short with <b>23M views</b>.</p>
   <ol class="parts">
     <li><span>01</span><h3>Ideas</h3><p>Research, topics, trends, hooks and scripts.</p></li>
     <li><span>02</span><h3>Production</h3><p>Shoot, edit, motion graphics, captions, and AI video with HeyGen avatars and ElevenLabs voice.</p></li>
@@ -304,12 +309,20 @@
   </ol>
   <!-- [PLACEHOLDER: real client quote, with the client's name] -->
   <div class="plans">
-    <div class="plan"><h3>Growth Essentials</h3><p class="fit">For creators starting with Shorts and Reels.</p><p class="price">₹35,000<small> a month</small></p><ul class="ticks small"><li>12 short-form videos a month</li></ul></div>
-    <div class="plan plan-hot"><span class="pill">Popular</span><h3>Creator Growth System</h3><p class="fit">For channels ready to grow with Shorts and long videos.</p><p class="price">₹75,000<small> a month</small></p><ul class="ticks small"><li>Shorts</li><li>Long videos</li><li>Thumbnails</li></ul></div>
-    <div class="plan"><h3>Creator Ecosystem</h3><p class="fit">For brands and EdTech that want the whole channel handled.</p><p class="price">₹1,50,000<small> a month</small></p><ul class="ticks small"><li>Full channel management</li><li>Ideas, production and publishing</li></ul></div>
+    <div class="plan"><h3>Growth Essentials</h3><p class="fit">For creators who want to post Shorts and Reels every week without editing them.</p><p class="price">₹35,000<small> a month</small></p><p class="per">About ₹2,900 a video</p><ul class="ticks small"><li>12 short-form videos a month</li><li>Hooks and scripts</li><li>Editing, captions and motion graphics</li><li>Posting on YouTube and Instagram</li></ul><a class="btn btn-ghost" href="mailto:rishavskillverse@gmail.com?subject=Growth%20Essentials">Start with Essentials</a></div>
+    <div class="plan plan-hot"><span class="pill">Popular</span><h3>Creator Growth System</h3><p class="fit">For channels ready to grow with Shorts and long videos together.</p><p class="price">₹75,000<small> a month</small></p><ul class="ticks small"><li>Everything in Essentials</li><li>Long videos</li><li>Thumbnails and titles</li><li>Shorts cut from your long videos</li></ul><a class="btn" href="mailto:rishavskillverse@gmail.com?subject=Creator%20Growth%20System">Start growing</a></div>
+    <div class="plan"><h3>Creator Ecosystem</h3><p class="fit">For brands and EdTech that want the whole channel handled by one team.</p><p class="price">₹1,50,000<small> a month</small></p><ul class="ticks small"><li>Full channel management</li><li>Ideas, production and publishing</li><li>SEO and analytics</li><li>AI avatar videos when you need them</li></ul><a class="btn btn-ghost" href="mailto:rishavskillverse@gmail.com?subject=Creator%20Ecosystem">Talk about Ecosystem</a></div>
   </div>
   <p class="note">Every plan starts with a call to agree the work. Need something different? Ask for a custom monthly plan.</p>
   <div class="cta"><a class="btn" href="mailto:rishavskillverse@gmail.com?subject=Project%20proposal">Start a project</a><a class="btn btn-ghost" href="https://wa.me/918101915210" target="_blank" rel="noopener">WhatsApp</a></div>
+
+  <h3 class="h3gap">Questions clients ask</h3>
+  <div class="faq">
+    <details><summary>What exactly do you handle?</summary><p>Ideas, production and publishing: research, scripts, shooting, editing, motion graphics, captions, AI video, titles, thumbnails, SEO, posting and analytics.</p></details>
+    <details><summary>Who is this best for?</summary><p>Creators, EdTech companies and brands in India that want to grow on YouTube and Instagram.</p></details>
+    <details><summary>How does it start?</summary><p>With a call. We agree the work, then we start.</p></details>
+    <details><summary>Do you offer custom plans?</summary><p>Yes. Tell us what you need and we will set a custom monthly plan.</p></details>
+  </div>
 
   <h3 class="h3gap">Cohorts, coming soon</h3>
   <div class="cards c2">
@@ -343,6 +356,6 @@
   <div class="frame"></div>
 </dialog>
 
-<script src="app.js?v=20261104k" defer></script>
+<script src="app.js?v=20261104t" defer></script>
 </body>
 </html>
