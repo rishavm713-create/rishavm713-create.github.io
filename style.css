@@ -371,3 +371,49 @@ dialog.pic .frame img{width:100%;height:auto}
 @media (min-width:640px){#services .cards.c2{grid-template-columns:1fr 1fr}}
 
 .names{text-align:center;color:var(--fg2);font-size:15px;max-width:44em;margin:-6px auto var(--s2)}
+
+/* ---- motion v3: entrance, stagger, hover and press feedback ---- */
+:root{--ease-out:cubic-bezier(.23,1,.32,1)}
+.rv{transition:opacity .55s var(--ease-out),transform .55s var(--ease-out)}
+.rv.in{transition-delay:calc(var(--i,0) * 70ms)}
+.rv.in:hover{transition-delay:0s}
+
+/* hero: text rises in line by line, the editor settles in */
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes settle{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+.hero-text>*{animation:rise .6s var(--ease-out) both}
+.hero-text>:nth-child(2){animation-delay:.07s}
+.hero-text>:nth-child(3){animation-delay:.14s}
+.hero-text>:nth-child(4){animation-delay:.21s}
+.hero-text>:nth-child(5){animation-delay:.28s}
+.editor{animation:settle .7s var(--ease-out) .1s both}
+
+/* grids reveal their cards one after another */
+.caps.rv>*,.cards.rv>*,.cases.rv>*,.plans.rv>*{opacity:0;transform:translateY(12px);transition:opacity .5s var(--ease-out),transform .5s var(--ease-out)}
+.caps.rv.in>*,.cards.rv.in>*,.cases.rv.in>*,.plans.rv.in>*{opacity:1;transform:none}
+.rv.in>:nth-child(2){transition-delay:70ms}
+.rv.in>:nth-child(3){transition-delay:140ms}
+.rv.in>:nth-child(4){transition-delay:210ms}
+.rv.in>:nth-child(5){transition-delay:280ms}
+.rv.in>:nth-child(6){transition-delay:350ms}
+.rv.in>:nth-child(7){transition-delay:420ms}
+.rv.in>:nth-child(8){transition-delay:490ms}
+
+/* press feedback everywhere, hover lift only with a mouse */
+.btn:active,.link:active{transform:scale(.97)}
+@media (hover:hover) and (pointer:fine){
+  .metric,.cs,.card,.caps>div,.plan{transition:transform .2s var(--ease-out),border-color .2s ease,opacity .5s var(--ease-out)}
+  .metric:hover,.cs:hover,.card:hover,.caps>div:hover,.plan:hover{transform:translateY(-3px);border-color:var(--line2)}
+  .rv.in>:hover{transition-delay:0s}
+}
+:focus-visible{outline:2px solid var(--accent-soft);outline-offset:3px;border-radius:6px}
+
+/* phone: put the message and buttons first, the editor visual after */
+@media (max-width:899px){
+  .editor{order:1;max-width:280px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .hero-text>*,.editor{animation:none}
+  .caps.rv>*,.cards.rv>*,.cases.rv>*,.plans.rv>*{opacity:1;transform:none;transition:none}
+}
