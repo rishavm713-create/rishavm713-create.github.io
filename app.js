@@ -98,7 +98,7 @@ $('#metrics').innerHTML = PROOF.map(([f, v, w, label], i) =>
 
 // chart path
 (function drawChart() {
-  const W = 600, H = 260, max = 75;
+  const W = 600, H = 260, max = Math.max(...DAILY) * 1.08;
   const pts = DAILY.map((v, i) => [i * W / (DAILY.length - 1), H - (v / max) * (H - 20)]);
   let d = `M${pts[0][0]},${pts[0][1]}`;
   for (let i = 1; i < pts.length; i++) {
@@ -208,9 +208,9 @@ document.querySelectorAll('.rv, [data-count], #chart').forEach((el) => io.observ
     const w = bar.clientWidth;
     bar.style.setProperty('--p', p);
     bar.style.setProperty('--x', `${p * (w - 2)}px`);
-    let cur = secs[0];
+    let cur = null;
     for (const s of secs) if (s.offsetTop - innerHeight / 3 <= scrollY) cur = s;
-    const t = cur ? cur.querySelector(':scope > .tc').textContent.trim() : '';
+    const t = cur ? cur.querySelector(':scope > .tc').textContent.trim() : '00:00 · Portfolio';
     if (label.textContent !== t) label.textContent = t;
     bar.style.setProperty('--lx', `${Math.max(0, Math.min(w - label.offsetWidth, p * w - label.offsetWidth / 2))}px`);
   };
@@ -262,3 +262,4 @@ document.querySelectorAll('.rv, [data-count], #chart').forEach((el) => io.observ
     else if (!e.isIntersecting && timer) { clearInterval(timer); timer = null; }
   }).observe(pipe);
 })();
+
