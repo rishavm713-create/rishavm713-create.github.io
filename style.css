@@ -558,3 +558,4 @@ dialog[open]{margin:auto}
 p,li{text-wrap:pretty}
 .case-body .nums+p{margin-bottom:var(--s4)}
 @media (min-width:900px){#services .cards.c2{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.parts.how{margin-top:var(--s3)}
