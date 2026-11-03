@@ -450,3 +450,12 @@ dialog[open]{margin:auto}
 .xp.in::after{height:calc((100% - 16px) * var(--xp,0))}
 .xp > li::before{transition:background-color .25s ease,border-color .25s ease,box-shadow .25s ease}
 .xp > li.on::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 4px rgba(124,58,237,.25),0 0 14px rgba(124,58,237,.6)}
+
+/* pipeline runs like a playing edit: a playhead moves along and lights the current step */
+.pipe .ph{position:absolute;left:var(--px,16px);top:var(--py,26px);width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;
+  background:var(--rec);box-shadow:0 0 0 4px rgba(248,113,113,.2),0 0 14px var(--rec);z-index:2;transition:top .6s var(--ease-out),left .6s var(--ease-out);pointer-events:none}
+.pipe li::before{transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease-out),box-shadow .3s}
+.pipe li.now::before{transform:scale(1.15);box-shadow:0 0 0 5px rgba(124,58,237,.3),0 0 18px rgba(124,58,237,.7)}
+.pipe li b{transition:color .3s}
+.pipe li.now b{color:var(--accent-soft)}
+@media (prefers-reduced-motion:reduce){.pipe .ph{display:none}}

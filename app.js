@@ -238,3 +238,27 @@ document.querySelectorAll('.rv, [data-count], #chart').forEach((el) => io.observ
   addEventListener('resize', update);
   update();
 })();
+
+// pipeline: playhead steps through Idea → Analyse in a loop while the section is on screen
+(function pipeLoop() {
+  const pipe = document.querySelector('.pipe');
+  if (!pipe || reduce) return;
+  const steps = [...pipe.querySelectorAll('li')];
+  const ph = document.createElement('i');
+  ph.className = 'ph';
+  ph.setAttribute('aria-hidden', 'true');
+  pipe.appendChild(ph);
+  let k = 0, timer = null;
+  const go = () => {
+    steps.forEach((li, i) => li.classList.toggle('now', i === k));
+    const dot = steps[k].getBoundingClientRect(), box = pipe.getBoundingClientRect();
+    const wide = innerWidth >= 900;
+    pipe.style.setProperty('--px', `${dot.left - box.left + 16}px`);
+    pipe.style.setProperty('--py', `${dot.top - box.top + (wide ? 16 : 26)}px`);
+    k = (k + 1) % steps.length;
+  };
+  new IntersectionObserver(([e]) => {
+    if (e.isIntersecting && !timer) { go(); timer = setInterval(go, 1100); }
+    else if (!e.isIntersecting && timer) { clearInterval(timer); timer = null; }
+  }).observe(pipe);
+})();
