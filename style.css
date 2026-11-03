@@ -14,7 +14,7 @@
 }
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--font);overflow-x:hidden}
+body{background:var(--bg);color:var(--fg);font:17px/1.65 var(--font);overflow-x:hidden}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
@@ -58,7 +58,7 @@ h3{font-size:18px;letter-spacing:-.01em;line-height:1.3}
 @keyframes rec{50%{opacity:.2}}
 
 /* layout */
-.section,.hero,.stats,.logos{max-width:1120px;margin:0 auto;padding-left:16px;padding-right:16px}
+.section,.hero,.stats,.logos{max-width:1280px;margin:0 auto;padding-left:16px;padding-right:16px}
 .section{padding-top:var(--s5);padding-bottom:0}
 
 /* hero */
@@ -153,7 +153,7 @@ h3{font-size:18px;letter-spacing:-.01em;line-height:1.3}
 
 /* contact */
 .contact{text-align:left;padding-bottom:var(--s5)}
-.foot{max-width:1120px;margin:0 auto;padding:24px 16px 40px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--fg3);font-size:14px}
+.foot{max-width:1280px;margin:0 auto;padding:24px 16px 40px;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:var(--fg3);font-size:14px}
 .foot a{text-decoration:none}
 
 /* player */
@@ -183,7 +183,7 @@ dialog.v .frame{aspect-ratio:9/16;max-height:82vh;margin:0 auto}
   .nav{padding:14px 32px}
   .nav nav{display:flex}
   .section,.hero,.logos{padding-left:32px;padding-right:32px}
-  .stats{max-width:1056px;margin-left:auto;margin-right:auto}
+  .stats{max-width:1216px;margin-left:auto;margin-right:auto}
   .hero{grid-template-columns:1.4fr 1fr;align-items:center;padding-top:var(--s5);padding-bottom:var(--s5)}
   .hero-photo{order:0;width:100%;max-width:400px}
   .case{grid-template-columns:1.3fr 1fr;align-items:start}
@@ -469,7 +469,7 @@ dialog[open]{margin:auto}
 .hero-text>:nth-child(6){animation-delay:.35s}
 
 /* two paths: hiring and client work */
-.paths{max-width:1120px;margin:0 auto;padding:var(--s4) 16px 0;display:grid;gap:12px}
+.paths{max-width:1280px;margin:0 auto;padding:var(--s4) 16px 0;display:grid;gap:12px}
 .path{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r3);padding:24px}
 .path h2{font-size:clamp(24px,3.2vw,32px);margin-bottom:var(--s1)}
 .path p{color:var(--fg2);max-width:30em}
@@ -493,3 +493,12 @@ dialog[open]{margin:auto}
 .who strong{color:var(--fg);font-weight:600}
 .hero-text>:nth-child(7){animation-delay:.42s}
 .link.inline{display:inline;padding:0;min-height:0;font-size:inherit}
+
+/* bigger, bolder small text (owner: fonts too small) */
+.stats span,.nums span{font-size:15px;font-weight:500;color:var(--fg)}
+.sub,.case-body p,.cs p,.card p,.xp p,.ticks li,.tools,.names{font-size:17px}
+.xp .ticks li,.cs .ticks li{font-size:16px}
+.pipe span{font-size:16px}
+.plan .ticks{margin:10px 0}
+.plan .fit{color:var(--fg2);font-size:15px;margin-top:8px}
+.price{font-size:34px}
