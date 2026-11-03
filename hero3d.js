@@ -44,6 +44,7 @@ export default function start(editor) {
   monitor.add(bezel);
   const tex = new THREE.TextureLoader().load(editor.querySelector('.monitor img').currentSrc || 'img/rishav.webp', () => draw());
   tex.colorSpace = THREE.SRGBColorSpace;
+  tex.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
   monitor.add(new THREE.Mesh(new THREE.PlaneGeometry(3.1, 3.1), new THREE.MeshBasicMaterial({ map: tex })));
   const recMat = new THREE.MeshBasicMaterial({ color: new THREE.Color(css('--rec')) });
   const rec = new THREE.Mesh(new THREE.CircleGeometry(0.07, 20), recMat);
@@ -131,8 +132,10 @@ export default function start(editor) {
     cur.x += (target.x - cur.x) * k;
     cur.y += (target.y - cur.y) * k;
     const s = Math.min(1, scrollY / Math.max(1, innerHeight));
-    rig.rotation.y = -0.32 + cur.x * 0.22 + Math.sin(t * 0.4) * 0.03;
-    rig.rotation.x = 0.1 + cur.y * 0.12 + s * 0.45;
+    // one motion at a time: the pointer tilt where there is a mouse, a slow sway on touch
+    const sway = target.x || target.y ? 0 : Math.sin(t * 0.4) * 0.03;
+    rig.rotation.y = -0.32 + cur.x * 0.22 + sway;
+    rig.rotation.x = 0.1 + cur.y * 0.12 + s * 0.25;
     rig.position.y = s * 0.6;
     camera.position.x = cur.x * 0.4;
     camera.lookAt(0, -0.2, 0);
