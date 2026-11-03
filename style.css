@@ -553,3 +553,4 @@ dialog[open]{margin:auto}
 .faq summary{cursor:pointer;font-weight:600}
 .faq p{color:var(--fg2);margin-top:8px}
 @media (max-width:639px){.hero .cta a:nth-child(3){display:none}}
+.plan .pill{align-self:flex-start}
