@@ -37,10 +37,11 @@ const PROOF = [
   ['p14', 2195298, 'Long video'],
   ['p3', 1734316, 'Long video'],
   ['p6', 1257536, 'Short'],
+  ['p16', 360000, 'Short, first week', '3.6 lakh'],
   ['p15', 284852, 'Long video'],
 ];
-// daily views shape read off the October 2026 screenshot (thousands)
-const DAILY = [5, 6, 5, 9, 7, 6, 7, 5, 6, 7, 8, 7, 7, 8, 9, 8, 10, 22, 16, 36, 20, 13, 15, 16, 34, 58, 56, 70];
+// daily views shape read off the 6 Oct – 2 Nov 2026 screenshot (thousands)
+const DAILY = [3, 9, 7, 5, 6, 4, 5, 6, 7, 7, 7, 7, 8, 7, 10, 23, 18, 36, 16, 7, 11, 12, 33, 60, 57, 70, 93, 63];
 const LOGOS = [3, 1, 4, 10, 8, 2, 15, 11, 9, 12, 5, 13, 6, 14, 7];
 
 const $ = (s) => document.querySelector(s);
