@@ -118,6 +118,7 @@ export default function start(editor) {
 
   // one damped pointer target; scroll adds a tilt as the hero leaves
   const target = { x: 0, y: 0 }, cur = { x: 0, y: 0 };
+  let swayAmt = 1;
   if (!phone && matchMedia('(hover: hover)').matches) addEventListener('pointermove', (e) => {
     target.x = (e.clientX / innerWidth) * 2 - 1;
     target.y = (e.clientY / innerHeight) * 2 - 1;
@@ -133,7 +134,8 @@ export default function start(editor) {
     cur.y += (target.y - cur.y) * k;
     const s = Math.min(1, scrollY / Math.max(1, innerHeight));
     // one motion at a time: the pointer tilt where there is a mouse, a slow sway on touch
-    const sway = target.x || target.y ? 0 : Math.sin(t * 0.4) * 0.03;
+    swayAmt += ((target.x || target.y ? 0 : 1) - swayAmt) * k;
+    const sway = swayAmt * Math.sin(t * 0.4) * 0.03;
     rig.rotation.y = -0.32 + cur.x * 0.22 + sway;
     rig.rotation.x = 0.1 + cur.y * 0.12 + s * 0.25;
     rig.position.y = s * 0.6;
