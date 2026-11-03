@@ -30,6 +30,7 @@ const GROUPS = {
 // [screenshot, views, what]
 const PROOF = [
   ['p1', 6562480, 'Long video'],
+  ['sciastra-bengaluru-90d', 5460829, 'Channel views in 90 days', '54.6 lakh'],
   ['p4', 5314630, 'Short'],
   ['p12', 3540000, 'Channel views in October', '35.4 lakh'],
   ['p2', 3111993, 'Long video'],

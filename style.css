@@ -433,3 +433,7 @@ dialog.pic .frame img{width:100%;height:auto}
 .es-panel{min-height:7.5em;animation:panel .22s var(--ease-out)}
 @keyframes panel{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.es-panel{animation:none}}
+
+/* case studies: turnaround and sales side by side, EditSutra full width */
+.cs-turn .nums{margin:12px 0 14px}
+@media (min-width:640px){.cases{grid-template-columns:1.3fr 1fr}.cs-main{grid-column:1/-1}}
