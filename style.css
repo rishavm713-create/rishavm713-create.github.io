@@ -575,3 +575,5 @@ p,li{text-wrap:pretty}
 .plan .grp+.ticks{margin:4px 0 0}
 .plan .btn{margin-top:20px}
 .plan-hot .get{background:var(--bg2)}
+#services .note{max-width:none}
+#services .cards.c2 h3{font-size:19px}
