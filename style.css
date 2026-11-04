@@ -561,3 +561,4 @@ p,li{text-wrap:pretty}
 .parts.how{margin-top:var(--s3)}
 .audit{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;background:var(--bg3);border:1px solid color-mix(in srgb,var(--accent) 50%,var(--line));border-radius:var(--r3);padding:24px;margin:0 0 var(--s3)}
 .audit h3{font-size:24px;margin-bottom:4px}.audit p{color:var(--fg2);max-width:40em}
+.ugc{background:var(--bg2);border:1px dashed var(--line2);border-radius:var(--r2);padding:14px 18px;margin:0 0 var(--s3);color:var(--fg2)}.ugc b{color:var(--fg)}
