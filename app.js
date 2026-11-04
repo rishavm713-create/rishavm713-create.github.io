@@ -263,3 +263,18 @@ document.querySelectorAll('.rv, [data-count], #chart').forEach((el) => io.observ
   }).observe(pipe);
 })();
 
+// results: show the total first; the full breakdown opens on demand
+(function results() {
+  const vids = PROOF.filter((p) => !/^Channel/.test(p[2]));
+  const total = vids.reduce((n, p) => n + p[1], 0);
+  const t = document.getElementById('res-total'), note = document.getElementById('res-note');
+  if (t) t.textContent = `${(total / 1e7).toFixed(1)} crore`;
+  if (note) note.textContent = `views across these ${vids.length} videos. Each one links to its YouTube Studio screenshot.`;
+  const btn = document.getElementById('res-more'), grid = document.getElementById('metrics');
+  if (!btn || !grid) return;
+  btn.addEventListener('click', () => {
+    const open = grid.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    btn.textContent = open ? 'Show less' : 'See the breakdown';
+  });
+})();
