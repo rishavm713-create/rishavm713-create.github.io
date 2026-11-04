@@ -569,3 +569,4 @@ p,li{text-wrap:pretty}
   .hero .lead{font-size:19px}
 }
 @media (min-width:900px){.metrics:not(.open) .metric:nth-child(5){display:block}}
+#services .sub{max-width:56em}
