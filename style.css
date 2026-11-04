@@ -568,3 +568,4 @@ p,li{text-wrap:pretty}
   .hero h1{font-size:clamp(44px,4.6vw,64px)}
   .hero .lead{font-size:19px}
 }
+@media (min-width:900px){.metrics:not(.open) .metric:nth-child(5){display:block}}
