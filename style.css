@@ -577,3 +577,24 @@ p,li{text-wrap:pretty}
 .plan-hot .get{background:var(--bg2)}
 #services .note{max-width:none}
 #services .cards.c2 h3{font-size:19px}
+
+/* breathing room across the whole page (owner: everything too close) */
+.section{padding-top:clamp(96px,11vw,160px)}
+.section > h2{margin-bottom:var(--s2)}
+.sub{margin-bottom:var(--s4)}
+.tc{margin-bottom:var(--s3)}
+.cases,.caps,.cards,.plans,.parts,.metrics,.paths{gap:20px}
+.cs,.card,.plan,.path,.caps div,.parts li{padding:28px}
+.case{gap:var(--s4)}
+.parts,.plans,.audit,.ugc,.sv-proof{margin-bottom:var(--s4)}
+.note{margin-top:var(--s3);margin-bottom:var(--s3)}
+.cta{gap:14px}
+.h3gap{margin-top:var(--s5)}
+.stats{margin-top:var(--s3)}
+.paths{padding-top:var(--s5)}
+.xp > li{padding-bottom:var(--s4)}
+.xp > .xp-main{margin-bottom:var(--s4);padding:28px}
+.group{margin-top:var(--s5)}
+.logos{padding-top:var(--s5)}
+.tools{margin-top:var(--s4)}
+@media (max-width:639px){.cs,.card,.plan,.path,.caps div,.parts li{padding:22px}}
