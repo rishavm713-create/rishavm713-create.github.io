@@ -570,3 +570,8 @@ p,li{text-wrap:pretty}
 }
 @media (min-width:900px){.metrics:not(.open) .metric:nth-child(5){display:block}}
 #services .sub{max-width:56em}
+.plan .get{background:var(--bg3);border-radius:var(--r1);padding:10px 12px;margin:6px 0 4px;color:var(--fg2);font-size:15px}.plan .get b{color:var(--fg)}
+.plan .grp{font:500 12px var(--mono);color:var(--fg3);margin:14px 0 2px}
+.plan .grp+.ticks{margin:4px 0 0}
+.plan .btn{margin-top:20px}
+.plan-hot .get{background:var(--bg2)}
