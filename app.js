@@ -52,7 +52,7 @@ const PROOF = [
   ['m-neet-alt', 182000, 'Long video · SciAstra', '1.82 lakh'],
 ];
 // daily views shape read off the 6 Oct – 2 Nov 2026 screenshot (thousands)
-const DAILY = [3, 9, 7, 5, 6, 4, 5, 6, 7, 7, 7, 7, 8, 7, 10, 23, 18, 36, 16, 7, 11, 12, 33, 60, 57, 70, 93, 63];
+const DAILY = [11, 24, 18, 37, 15, 8, 12, 13, 35, 60, 57, 69, 93, 62, 46, 45, 52, 30, 17, 36, 28, 33, 28, 21, 20, 22, 24, 20]; // 20 Oct – 16 Nov 2026, thousands, read off Studio chart
 const LOGOS = [3, 1, 4, 10, 8, 2, 15, 11, 9, 12, 5, 13, 6, 14, 7];
 
 const $ = (s) => document.querySelector(s);
